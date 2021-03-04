@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.80.0" />
+    <title>Checkout example · Bootstrap v5.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <meta name="theme-color" content="#7952b3" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .container {
+        max-width: 960px;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <img
+            class="d-block mx-auto mb-4"
+            src="/docs/5.0/assets/brand/bootstrap-logo.svg"
+            alt=""
+            width="72"
+            height="57"
+          />
+          <% if(success==null){%>
+          <p class="lead"><%= success %></p>
+          <%}else{%>
+          <p><%= success %></p>
+          <%} %>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Billing address</h4>
+          <form
+            action="/blogupload"
+            class="needs-validation"
+            enctype="multipart/form-data"
+            novalidate
+          >
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Title"
+                  required
+                  name="title"
+                />
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label"
+                  >Description <span class="text-muted"></span
+                ></label>
+                <textarea
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="description"
+                  name="description"
+                ></textarea>
+              </div>
+              <div>
+                <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label"
+                    >Short image</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    name="shortlogo"
+                    id="formFileMultiple"
+                  />
+                  <label for="formFileMultiple" class="form-label"
+                    >Logo image</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    name="largelogo"
+                    id="formFileMultiple"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              style="margin-top: 50px; margin-bottom: 50px"
+              class="w-100 btn btn-primary btn-lg"
+              type="submit"
+            >
+              Upload Blog
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="form-validation.js"></script>
+  </body>
+</html>
