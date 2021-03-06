@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ("headAndStyles") %>
+  <body class="bg-light">
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <img
+            class="d-block mx-auto mb-4"
+            src="/docs/5.0/assets/brand/bootstrap-logo.svg"
+            alt=""
+            width="72"
+            height="57"
+          />
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Billing address</h4>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="Title"
+                required
+                name="title"
+                value="<%= data.title %>"
+              />
+            </div>
+            <div class="col-12">
+              <label for="email" class="form-label"
+                >Description <span class="text-muted"></span
+              ></label>
+              <textarea
+                class="form-control"
+                id="description"
+                placeholder="description"
+                name="description"
+              >
+<%= data.description %> </textarea
+              >
+            </div>
+            <div>
+              <div class="mb-3">
+                <label for="formFileMultiple" class="form-label"
+                  >Short image</label
+                >
+                <input
+                  style="margin-bottom: 10px"
+                  class="form-control"
+                  type="file"
+                  name="image"
+                  id="formFileMultiple"
+                  onchange="loadFile(event)"
+                  value="<%= data.imagelogo %>"
+                />
+                <img
+                  src="../../<%= data.imagelogo %>"
+                  width="100px"
+                  height="100px"
+                  style="margin-bottom: 10px"
+                  id="output"
+                />
+                <label for="formFileMultiple" class="form-label"
+                  >Logo image</label
+                >
+                <input
+                  style="margin-bottom: 10px"
+                  class="form-control"
+                  type="file"
+                  name="image"
+                  id="formFileMultiplelogo"
+                  onchange="loadFile2(event)"
+                  value="<%= data.imagetitle %>"
+                />
+                <img
+                  src="../../<%= data.imagetitle %>"
+                  width="100px"
+                  height="100px"
+                  id="output2"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            id="editItem"
+            onclick="editItem('<%= data.id %>')"
+            style="margin-top: 50px; margin-bottom: 50px"
+            class="w-50 btn btn-primary btn-lg"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+    var loadFile = function (event) {
+      var image = document.getElementById("output");
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+    var loadFile2 = function (event) {
+      var image = document.getElementById("output2");
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
+  <script src="../public/js/deleteItem.js"></script>
+</html>
