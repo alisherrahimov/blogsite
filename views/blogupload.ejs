@@ -62,10 +62,10 @@
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Billing address</h4>
           <form
+            method="POST"
             action="/blogupload"
             class="needs-validation"
             enctype="multipart/form-data"
-            novalidate
           >
             <div class="row g-3">
               <div class="col-sm-6">
@@ -99,7 +99,7 @@
                   <input
                     class="form-control"
                     type="file"
-                    name="shortlogo"
+                    name="image"
                     id="formFileMultiple"
                   />
                   <label for="formFileMultiple" class="form-label"
@@ -108,7 +108,7 @@
                   <input
                     class="form-control"
                     type="file"
-                    name="largelogo"
+                    name="image"
                     id="formFileMultiple"
                   />
                 </div>
@@ -125,13 +125,5 @@
         </div>
       </main>
     </div>
-
-    <script
-      src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="form-validation.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@ const image = multer.diskStorage({
     cb(null, "public/upload/images");
   },
   filename: (req, file, cb) => {
+    
     const name = Math.round(100000000000000000000 * Math.random());
     cb(null, `${name}` + ".jpg");
   },

@@ -34,6 +34,7 @@
           font-size: 3.5rem;
         }
       }
+
       body {
         font-size: 0.875rem;
       }
@@ -45,15 +46,15 @@
       }
 
       /*
- * Sidebar
- */
+   * Sidebar
+   */
 
       .sidebar {
         position: fixed;
         top: 0;
         /* rtl:raw:
-  right: 0;
-  */
+      right: 0;
+      */
         bottom: 0;
         /* rtl:remove */
         left: 0;
@@ -102,8 +103,8 @@
       }
 
       /*
- * Navbar
- */
+   * Navbar
+   */
 
       .navbar-brand {
         padding-top: 0.75rem;
@@ -220,33 +221,23 @@
     </div>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% data.forEach((val, index)=>{ %>
         <div class="col">
           <div class="card shadow-sm">
-            <svg
+            <img
               class="bd-placeholder-img card-img-top"
               width="100%"
               height="225"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: Thumbnail"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#55595c" />
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
-
+              src="<%= val.imagelogo %>"
+            />
             <div class="card-body">
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
+              <p class="card-text"><%= val.title %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button
+                    onclick="PostId()"
                     type="button"
+                    id="postid"
                     class="btn btn-sm btn-outline-secondary"
                   >
                     View
@@ -258,11 +249,13 @@
                     Edit
                   </button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <p><%= val.id %></p>
+                <small class="text-muted"><%= val.createdAt %> </small>
               </div>
             </div>
           </div>
         </div>
+        <% }) %>
       </div>
     </main>
     <script
@@ -282,5 +275,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.js"></script>
+    <script src="../public/FrontEndJsCode/PostId.js"></script>
   </body>
 </html>

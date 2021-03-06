@@ -1,17 +1,17 @@
 import { blogs } from "../db/models/blogs";
 
 const blogupload = (req, res) => {
-  const { username, description } = req.query;
-  console.log(req.query);
+  const { title, description } = req.body;
+  console.log(req.files);
   blogs
     .create({
-      username: username,
+      title: title,
       description: description,
-      imagelogo: req.files[0].filename,
-      imagetitle: req.files[1].filename,
+      imagelogo: req.files[0].path,
+      imagetitle: req.files[1].path,
     })
     .then(() => {
-      res.render("blogupload", { success: "malumotlar saqlandi" });
+      res.redirect("/blogupload");
     })
     .catch(() => {
       res.render("blogupload", { error: "malumot saqlashda xatolik" });
