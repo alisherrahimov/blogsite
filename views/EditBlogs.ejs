@@ -18,11 +18,11 @@
 
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Title</label>
+              <label for="title" class="form-label">Title</label>
               <input
                 type="text"
                 class="form-control"
-                id="firstName"
+                id="title"
                 placeholder="Title"
                 required
                 name="title"
@@ -30,7 +30,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="email" class="form-label"
+              <label for="description" class="form-label"
                 >Description <span class="text-muted"></span
               ></label>
               <textarea
@@ -63,7 +63,7 @@
                   style="margin-bottom: 10px"
                   id="output"
                 />
-                <label for="formFileMultiple" class="form-label"
+                <label for="formFileMultiplelogo" class="form-label"
                   >Logo image</label
                 >
                 <input
@@ -85,8 +85,8 @@
             </div>
           </div>
           <button
-            id="editItem"
             onclick="editItem('<%= data.id %>')"
+            id="editItem"
             style="margin-top: 50px; margin-bottom: 50px"
             class="w-50 btn btn-primary btn-lg"
             type="submit"
@@ -106,6 +106,30 @@
       var image = document.getElementById("output2");
       image.src = URL.createObjectURL(event.target.files[0]);
     };
+    async function editItem(idx) {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const imagetitle = document.getElementById("formFileMultiple").files[0];
+      const imagelogo = document.getElementById("formFileMultiplelogo")
+        .files[0];
+      console.log(idx);
+      const form = new FormData();
+      form.append("title", title);
+      form.append("description", description);
+      form.append("image", imagetitle);
+      form.append("image", imagelogo);
+      console.log(title);
+      console.log(form);
+      const data = await fetch(`/home/edit/${idx}`, {
+        method: "PUT",
+        body: form,
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   </script>
-  <script src="../public/js/deleteItem.js"></script>
 </html>

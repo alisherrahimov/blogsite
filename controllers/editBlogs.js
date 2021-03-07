@@ -1,6 +1,7 @@
 import { blogs } from "../db/models/blogs";
 
-const editBlogs = () => {
+const editBlogs = (req, res) => {
+  console.log("body", req.body);
   blogs.findByIdAndUpdate({});
 };
 

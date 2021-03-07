@@ -2,7 +2,7 @@ import { blogs } from "../db/models/blogs";
 
 const blogupload = (req, res) => {
   const { title, description } = req.body;
-  console.log(req.files);
+
   blogs
     .create({
       title: title,

@@ -4,8 +4,6 @@ const editandView = (req, res) => {
     if (err) {
       console.error(err);
     } else {
-      console.log(val);
-
       res.render("EditBlogs", { data: val });
     }
   });
