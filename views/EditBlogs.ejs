@@ -1,135 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ("headAndStyles") %>
-  <body class="bg-light">
-    <div class="container">
-      <main>
+<%- include ("headAndStyles") %>
+
+<body class="bg-light">
+<div class="container">
+    <main>
         <div class="py-5 text-center">
-          <img
-            class="d-block mx-auto mb-4"
-            src="/docs/5.0/assets/brand/bootstrap-logo.svg"
-            alt=""
-            width="72"
-            height="57"
-          />
+            <img
+                    class="d-block mx-auto mb-4"
+                    src="/docs/5.0/assets/brand/bootstrap-logo.svg"
+                    alt=""
+                    width="72"
+                    height="57"
+            />
         </div>
         <div class="col-md-7 col-lg-8">
-          <h4 class="mb-3">Billing address</h4>
+            <h4 class="mb-3">Billing address</h4>
 
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="title" class="form-label">Title</label>
-              <input
-                type="text"
-                class="form-control"
-                id="title"
-                placeholder="Title"
-                required
-                name="title"
-                value="<%= data.title %>"
-              />
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Title</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="firstName"
+                            placeholder="Title"
+                            required
+                            name="title"
+                            value="<%= data.title %> "
+                    />
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label"
+                    >Description <span class="text-muted"></span
+                        ></label>
+                    <textarea
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="description"
+                            name="description"
+                    >
+                    <%= data.description %> 
+              </textarea>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label"
+                        >Short image</label
+                        >
+                        <input
+                                class="form-control"
+                                type="file"
+                                name="image"
+                                id="formFileMultiple"
+                                onchange="loadFile2(event)"
+                        />
+                        <img width="100" height="100" id="image2"
+                             src="../../<%= data.imagetitle %>"/>
+                        <label for="formFileMultiple" class="form-label"
+                        >Logo image</label
+                        >
+                        <input
+                                class="form-control"
+                                type="file"
+                                name="image"
+                                onchange="loadFile(event)"
+                                id="formFileMultipleLogo"
+                        />
+                        <img width="100" height="100" id="image1"
+                             src="../../<%= data.imagelogo %>"/>
+
+                    </div>
+                </div>
             </div>
-            <div class="col-12">
-              <label for="description" class="form-label"
-                >Description <span class="text-muted"></span
-              ></label>
-              <textarea
-                class="form-control"
-                id="description"
-                placeholder="description"
-                name="description"
-              >
-<%= data.description %> </textarea
-              >
-            </div>
-            <div>
-              <div class="mb-3">
-                <label for="formFileMultiple" class="form-label"
-                  >Short image</label
-                >
-                <input
-                  style="margin-bottom: 10px"
-                  class="form-control"
-                  type="file"
-                  name="image"
-                  id="formFileMultiple"
-                  onchange="loadFile(event)"
-                  value="<%= data.imagelogo %>"
-                />
-                <img
-                  src="../../<%= data.imagelogo %>"
-                  width="100px"
-                  height="100px"
-                  style="margin-bottom: 10px"
-                  id="output"
-                />
-                <label for="formFileMultiplelogo" class="form-label"
-                  >Logo image</label
-                >
-                <input
-                  style="margin-bottom: 10px"
-                  class="form-control"
-                  type="file"
-                  name="image"
-                  id="formFileMultiplelogo"
-                  onchange="loadFile2(event)"
-                  value="<%= data.imagetitle %>"
-                />
-                <img
-                  src="../../<%= data.imagetitle %>"
-                  width="100px"
-                  height="100px"
-                  id="output2"
-                />
-              </div>
-            </div>
-          </div>
-          <button
-            onclick="editItem('<%= data.id %>')"
-            id="editItem"
-            style="margin-top: 50px; margin-bottom: 50px"
-            class="w-50 btn btn-primary btn-lg"
-            type="submit"
-          >
-            Save
-          </button>
+            <button
+                    onclick="EditItem('<%= data.id %>')"
+                    style="margin-top: 50px; margin-bottom: 50px"
+                    class="w-50 btn btn-primary btn-lg"
+                    type="submit"
+            >
+                Save
+            </button>
         </div>
-      </main>
-    </div>
-  </body>
-  <script>
+    </main>
+</div>
+</body>
+<script>
+    async function EditItem(idx) {
+        const title = document.getElementById("firstName").value;
+        const description = document.getElementById("email").value;
+        const imageShort = document.getElementById("formFileMultiple").files[0];
+        const imageLogo = document.getElementById("formFileMultipleLogo")
+            .files[0];
+
+        const form = new FormData();
+        form.append("title", title);
+        form.append("description", description);
+        form.append("image", imageShort);
+        form.append("image", imageLogo);
+
+        const data = await fetch(`/home/edit/${idx}`, {
+            method: "PUT",
+            body: form,
+        })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
     var loadFile = function (event) {
-      var image = document.getElementById("output");
-      image.src = URL.createObjectURL(event.target.files[0]);
+        var image = document.getElementById('image1');
+        image.src = URL.createObjectURL(event.target.files[0]);
     };
     var loadFile2 = function (event) {
-      var image = document.getElementById("output2");
-      image.src = URL.createObjectURL(event.target.files[0]);
+        var image = document.getElementById('image2');
+        image.src = URL.createObjectURL(event.target.files[0]);
     };
-    async function editItem(idx) {
-      const title = document.getElementById("title").value;
-      const description = document.getElementById("description").value;
-      const imagetitle = document.getElementById("formFileMultiple").files[0];
-      const imagelogo = document.getElementById("formFileMultiplelogo")
-        .files[0];
-      console.log(idx);
-      const form = new FormData();
-      form.append("title", title);
-      form.append("description", description);
-      form.append("image", imagetitle);
-      form.append("image", imagelogo);
-      console.log(title);
-      console.log(form);
-      const data = await fetch(`/home/edit/${idx}`, {
-        method: "PUT",
-        body: form,
-      })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  </script>
+</script>
 </html>

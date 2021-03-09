@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eedb6233-d991-4a5f-b3bb-ea5a065af6a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blogsite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/blogUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/blogUpload.js" afterDir="false" />
+    <list default="true" id="eedb6233-d991-4a5f-b3bb-ea5a065af6a3" name="Default Changelist" comment=" 1">
+      <change afterPath="$PROJECT_DIR$/controllers/Crud.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CheckAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CheckAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/MulterFileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/MulterFileUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/blogUpload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/deleteBlogs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/editBlogs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/editandView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/viewBlogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/viewBlogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/dbConnect.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbConnect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routesHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routesHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/EditBlogs.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EditBlogs.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/blogupload.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/blogupload.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/headAndStyles.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/headAndStyles.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="blogsite" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
@@ -49,16 +69,36 @@
       <option name="presentableId" value="Default" />
       <updated>1614957165622</updated>
       <workItem from="1614957172507" duration="1620000" />
+      <workItem from="1615218416571" duration="4881000" />
+      <workItem from="1615279501768" duration="2919000" />
+      <workItem from="1615317650386" duration="6278000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value=" 1" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="27" key="#Notifications" timestamp="1615320022030">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1615320022030" />
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614957511522">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -67,6 +107,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="74" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.738@0.0.1366.738" timestamp="1614957458651" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615320599472">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615320599472" />
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1615323902782">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1615323902782" />
+    <state x="462" y="124" key="FileChooserDialogImpl" timestamp="1615229825948">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1615229825948" />
     <state width="1345" height="161" key="GridCell.Tab.0.bottom" timestamp="1614958804656">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -83,9 +135,17 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1614958804655" />
-    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614957668274">
+    <state x="184" y="11" key="SettingsEditor" timestamp="1615231271474">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1614957668274" />
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1615231271474" />
+    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615323863111">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1615323863111" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1615279632662">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1615279632662" />
   </component>
 </project>
