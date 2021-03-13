@@ -51,18 +51,7 @@ const BlogEditPut = async (req, res) => {
     }
   );
 };
-const BlogGet = async (req, res) => {
-  const data = await blogs.find((err, val) => {
-    if (err) {
-      console.error(chalk.red.bold(err));
-    } else {
-      res.render("home", {
-        data: val,
-        free: "Siz hali hech qanday blog kiritmagansiz.!!!",
-      });
-    }
-  });
-};
+
 const BlogGetId = async (req, res) => {
   const data = await blogs.findOne({ _id: req.params.id }, (err, val) => {
     if (err) {
@@ -107,7 +96,6 @@ export {
   BlogUploadPost,
   BlogDelete,
   BlogEditPut,
-  BlogGet,
   BlogGetId,
   BlogGetIdEdit,
   BlogIndexGet,

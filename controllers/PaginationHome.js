@@ -14,7 +14,7 @@ const BlogPaginationHomeGet = async (req, res) => {
   await blogs.paginate(
     {},
     //agar malumotlarni koproq olishni xoxlasangiz limitni ozgartiring
-    { page: req.query.page, limit: 2, customLabels: myCustomLabels },
+    { page: req.query.page, limit: 3, customLabels: myCustomLabels },
     (err, result) => {
       if (err) {
         console.error(err);

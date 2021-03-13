@@ -99,22 +99,35 @@
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a style="text-decoration: none" href="/home/<%= val.id %> ">
+                  <a
+                    style="
+                      text-decoration: none;
+                      background-color: green;
+                      margin: 2px;
+                    "
+                    href="/home/<%= val.id %> "
+                  >
                     <button
                       type="button"
                       id="postid"
                       class="btn btn-sm btn-outline-secondary"
+                      style="color: black"
                     >
                       View
                     </button>
                   </a>
                   <a
-                    style="text-decoration: none"
+                    style="
+                      text-decoration: none;
+                      background-color: yellow;
+                      margin: 2px;
+                    "
                     href="/home/edit/<%= val.id %> "
                   >
                     <button
                       type="button"
                       class="btn btn-sm btn-outline-secondary"
+                      style="color: black"
                     >
                       Edit
                     </button>
@@ -124,11 +137,18 @@
                     type="button"
                     id="postid"
                     class="btn btn-sm btn-outline-secondary"
+                    style="background-color: red; color: black; margin: 2px"
                   >
                     Delete
                   </button>
                 </div>
-                <small class="text-muted"><%= val.createdAt %> </small>
+                <p
+                  onchange="convert('<%= val.createdAt %>')"
+                  id="dataid"
+                  class="text-muted"
+                >
+                  <%= val.createdAt %>
+                </p>
               </div>
             </div>
           </div>
