@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-
+import mongoosePaginate from "mongoose-paginate-v2";
 const schema = new Schema(
   {
     title: { type: String },
@@ -9,6 +9,6 @@ const schema = new Schema(
   },
   { timestamps: true }
 );
-
+schema.plugin(mongoosePaginate);
 const blogs = model("blogs", schema);
 export { blogs };

@@ -1,41 +1,41 @@
 <html lang="en">
-<%- include ("headAndStyles") %>
-<body>
-<header
-        class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
->
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
-    >Company name</a
+  <%- include ("headAndStyles") %>
+  <body>
+    <header
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
     >
-    <button
-            class="navbar-toggler position-absolute d-md-none collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu"
-            aria-controls="sidebarMenu"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-    >
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
+        >Company name</a
+      >
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
-    </button>
-    <input
-            class="form-control form-control-dark w-100"
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-    />
-    <ul class="navbar-nav px-3">
+      </button>
+      <input
+        class="form-control form-control-dark w-100"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+          <a class="nav-link" href="#">Sign out</a>
         </li>
-    </ul>
-</header>
+      </ul>
+    </header>
 
-<div class="container-fluid">
-    <div class="row">
+    <div class="container-fluid">
+      <div class="row">
         <nav
-                id="sidebarMenu"
-                class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
         >
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
@@ -83,83 +83,66 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <% if (data.length == 0){ %>
-            <p><%= free %></p>
-        <% } %>
-        <% data.forEach((val, index)=>{ %>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img
-                            class="bd-placeholder-img card-img-top"
-                            width="100%"
-                            height="225"
-                            src="<%= val.imagelogo %>"
-                    />
-                    <div class="card-body">
-                        <p style="font-size: large; font-weight: bold" class="card-text">
-                            <%= val.title %>
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a style="text-decoration: none" href="/home/<%= val.id %> "
-                                >
-                                    <button
-                                            type="button"
-                                            id="postid"
-                                            class="btn btn-sm btn-outline-secondary"
-                                    >
-                                        View
-                                    </button>
-                                </a
-                                >
-                                <a
-                                        style="text-decoration: none"
-                                        href="/home/edit/<%= val.id %> "
-                                >
-                                    <button
-                                            type="button"
-                                            class="btn btn-sm btn-outline-secondary"
-                                    >
-                                        Edit
-                                    </button>
-                                </a>
-
-                                <button
-                                        onclick="deleteItem('<%= val.id %>')"
-                                        type="button"
-                                        id="postid"
-                                        class="btn btn-sm btn-outline-secondary"
-                                >
-                                    Delete
-                                </button>
-                            </div>
-
-                            <small class="text-muted"><%= val.createdAt %> </small>
-                        </div>
-                    </div>
+        <p><%= free %></p>
+        <% } %> <% data.itemsList.forEach((val, index)=>{ %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              src="<%= val.imagelogo %>"
+            />
+            <div class="card-body">
+              <p style="font-size: large; font-weight: bold" class="card-text">
+                <%= val.title %>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a style="text-decoration: none" href="/home/<%= val.id %> ">
+                    <button
+                      type="button"
+                      id="postid"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      View
+                    </button>
+                  </a>
+                  <a
+                    style="text-decoration: none"
+                    href="/home/edit/<%= val.id %> "
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      Edit
+                    </button>
+                  </a>
+                  <button
+                    onclick="deleteItem('<%= val.id %>')"
+                    type="button"
+                    id="postid"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    Delete
+                  </button>
                 </div>
+                <small class="text-muted"><%= val.createdAt %> </small>
+              </div>
             </div>
+          </div>
+        </div>
         <% }) %>
+      </div>
+    </main>
+    <div class="container" style="margin-top: 10%">
+      <nav aria-label="...">
+        <ul class="pagination justify-content-center">
+          <%- include ("pagination",{data : data}) %>
+        </ul>
+      </nav>
     </div>
-</main>
-<scrip
-        src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"
-></scrip>
-
-<scrip
-        src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
-        crossorigin="anonymous"
-></scrip>
-<scrip
-        src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
-        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
-        crossorigin="anonymous"
-></scrip>
-<scrip
-        src="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.js"
-></scrip>
-<script type="text/javascript" src="../public/js/deleteItem.js"></script>
-</body>
+    <%- include ("scripts") %>
+  </body>
 </html>

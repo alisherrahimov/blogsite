@@ -1,0 +1,45 @@
+<% if(data.paginator.prev!=null){%> <% let active = "active" %>
+<li class="page-item <%= active %>">
+  <a
+    class="page-link"
+    href="/users?page=<%= data.paginator.prev %> "
+    tabindex="-1"
+    aria-disabled="true"
+    >Previous</a
+  >
+</li>
+<%}else{%> <% let dis = "disabled" %>
+<li class="page-item <%= dis %>">
+  <a
+    class="page-link"
+    href="/users?page=<%= data.paginator.prev %> "
+    tabindex="-1"
+    aria-disabled="true"
+    >Previous</a
+  >
+</li>
+<%} %> <% for(let i=1;i<=data.paginator.pageCount;i++){%> <% let a=i %>
+<li class="page-item" aria-current="page">
+  <a class="page-link" href="/users?page=<%= i %>"><%= i %> </a>
+</li>
+<%} %> <% if(data.paginator.next!=null){%> <% let active = "active" %>
+<li class="page-item <%= active %>">
+  <a
+    class="page-link"
+    href="/users?page=<%= data.paginator.next %> "
+    tabindex="-1"
+    aria-disabled="true"
+    >Next</a
+  >
+</li>
+<%}else{%> <% let dis = "disabled" %>
+<li class="page-item <%= dis %>">
+  <a
+    class="page-link"
+    href="/users?page=<%= data.paginator.next %> "
+    tabindex="-1"
+    aria-disabled="true"
+    >Next</a
+  >
+</li>
+<%} %>

@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eedb6233-d991-4a5f-b3bb-ea5a065af6a3" name="Default Changelist" comment=" 1">
-      <change afterPath="$PROJECT_DIR$/controllers/Crud.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/alish.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/PaginationHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/scripts.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CheckAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CheckAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/MulterFileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/MulterFileUpload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/blogUpload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/deleteBlogs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/editBlogs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/editandView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/viewBlogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/viewBlogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/dbConnect.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbConnect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CheckAdmin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Crud.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Crud.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/viewBlogs.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routesHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routesHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/EditBlogs.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EditBlogs.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/blogupload.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/blogupload.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/headAndStyles.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/headAndStyles.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
@@ -26,9 +22,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="blogsite" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTTP Request" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -49,14 +49,210 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NODEJSPROJECT\blogsite" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="page" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="limit" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="page" />
+                <option name="value" value="2" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="limit" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="page" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="limit" />
+                <option name="value" value="5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="page" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="limit" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="page" />
+                <option name="value" value="2" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="limit" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="/users" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.blogsite">
+    <configuration name="request#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/request.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="blogsite" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.request#1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -72,6 +268,10 @@
       <workItem from="1615218416571" duration="4881000" />
       <workItem from="1615279501768" duration="2919000" />
       <workItem from="1615317650386" duration="6278000" />
+      <workItem from="1615356778480" duration="10000" />
+      <workItem from="1615370590629" duration="3756000" />
+      <workItem from="1615392753260" duration="4657000" />
+      <workItem from="1615486523591" duration="907000" />
     </task>
     <servers />
   </component>
@@ -83,7 +283,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -95,22 +297,30 @@
     <option name="LAST_COMMIT_MESSAGE" value=" 1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="27" key="#Inspections" timestamp="1615372312384">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#Inspections/0.0.1366.738@0.0.1366.738" timestamp="1615372312384" />
     <state x="275" y="27" key="#Notifications" timestamp="1615320022030">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1615320022030" />
-    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614957511522">
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615375855428">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1614957511522" />
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1615375855428" />
     <state x="463" y="74" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1614957458651">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="74" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.738@0.0.1366.738" timestamp="1614957458651" />
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615320599472">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615371910272">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615320599472" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615371910272" />
+    <state x="425" y="204" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1615372171878">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="425" y="204" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738@0.0.1366.738" timestamp="1615372171878" />
     <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1615323902782">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -119,26 +329,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="462" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1615229825948" />
-    <state width="1345" height="161" key="GridCell.Tab.0.bottom" timestamp="1614958804656">
+    <state width="1345" height="203" key="GridCell.Tab.0.bottom" timestamp="1615398694759">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1614958804656" />
-    <state width="1345" height="161" key="GridCell.Tab.0.center" timestamp="1614958804655">
+    <state width="1345" height="203" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1615398694759" />
+    <state width="1345" height="203" key="GridCell.Tab.0.center" timestamp="1615398694759">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1614958804655" />
-    <state width="1345" height="161" key="GridCell.Tab.0.left" timestamp="1614958804654">
+    <state width="1345" height="203" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1615398694759" />
+    <state width="1345" height="203" key="GridCell.Tab.0.left" timestamp="1615398694759">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1614958804654" />
-    <state width="1345" height="161" key="GridCell.Tab.0.right" timestamp="1614958804655">
+    <state width="1345" height="203" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1615398694759" />
+    <state width="1345" height="203" key="GridCell.Tab.0.right" timestamp="1615398694759">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1614958804655" />
-    <state x="184" y="11" key="SettingsEditor" timestamp="1615231271474">
+    <state width="1345" height="203" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1615398694759" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1615375847638">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1615231271474" />
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1615375847638" />
     <state x="490" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615323863111">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -147,5 +357,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1615279632662" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1615373064140">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1615373064140" />
   </component>
 </project>
