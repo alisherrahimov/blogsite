@@ -1,9 +1,12 @@
 import chalk from "chalk";
 import { blogs } from "../db/models/blogs";
 import { adminpanel } from "../db/models/adminandpassword";
-
+import fs from "fs";
+import sharp from "sharp";
 const BlogUploadPost = async (req, res) => {
   const { title, description } = req.body;
+  
+  console.log(req.files);
   const data = await blogs
     .create({
       title: title,
@@ -15,17 +18,28 @@ const BlogUploadPost = async (req, res) => {
       res.redirect("/home");
     })
     .catch(() => {
-      res.render("blogupload", { error: "malumot saqlashda xatolik" });
+      res.render("blogupload", { error: "Malumot saqlashda xatolik" });
     });
 };
 const BlogDelete = async (req, res) => {
-  const data = await blogs.deleteOne(
+  const data = await blogs.findByIdAndDelete(
     { _id: req.params.id },
     { rawResult: true },
-    (err) => {
+    (err, docs) => {
       if (err) {
         console.error(chalk.red.bold(err));
       } else {
+        fs.unlink(`${docs.value.imagelogo}`, (err) => {
+          if (err) {
+            console.error(err);
+          } else {
+            fs.unlink(`${docs.value.imagetitle}`, (err) => {
+              if (err) {
+                console.log(err);
+              }
+            });
+          }
+        });
         res.redirect("/home");
       }
     }

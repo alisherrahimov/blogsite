@@ -1,4 +1,5 @@
 import multer from "multer";
+import sharp from "sharp";
 
 const image = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -8,12 +9,11 @@ const image = multer.diskStorage({
   filename: (req, file, cb) => {
     let type;
     if (file.mimetype == "image/jpeg") {
-      type = file.mimetype.slice(6, 10);
+      type = "jpg";
     }
     if (file.mimetype == "image/png") {
-      type = file.mimetype.slice(6, 9);
+      type = "png";
     }
-    console.log(type);
     const name = Math.round(1000000000000000000000 * Math.random());
     cb(null, `${name}` + `.${type}`);
   },
