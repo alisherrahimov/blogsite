@@ -1,5 +1,5 @@
 import { users } from "../db/models/users";
-import bcrypt from "bcrypt";
+import bcrypt, { hash } from "bcrypt";
 import jsonwebtoken from "jsonwebtoken";
 const registeruserPOST = async (req, res) => {
   const { name, lastname, email, password, password2 } = req.body;
@@ -7,38 +7,48 @@ const registeruserPOST = async (req, res) => {
   if (password !== password2) {
     return res.json({
       success: false,
-      error: "Ikkinchi kiritgan parol birinchi bilan mos kelmadi ",
+      error: "Ikkinchi kiritgan parol birinchi bilan mos kelmadi",
     });
   }
   //Email buyicha bazadan qidirish
   const user = await users.find({ email: email });
   // agar email avval regdan o'tgan bo'lsa xato qaytarishimiz kerak.
-  if (user) {
+  if (!user) {
     return res.json({
       success: false,
-      error: "Siz avval ro'yxatda o'tgan ekansiz.!",
+      error: "Siz avval ro'yxatda o'tgansiz.!",
     });
   }
+
+  //userning parolini hashlab olishimiz kerak ximoya uchun
+
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) {
+      console.error(err);
+    } else {
+      bcrypt.hash(password, salt, (err, hash) => {
+        if (err) {
+          console.error(err);
+        } else {
+          //basaga userni yozish
+          try {
+            users.create({
+              name: name,
+              lastname: lastname,
+              email: email,
+              password: hash,
+            });
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      });
+    }
+  });
+
+  //userga token berish
   //hashlashning kalit sozi o'zgartirish mumkin hohlagan narsaga
   let secretkey = "12345";
-  //userning parolini hashlab olishimiz kerak ximoya uchun
-  let code = await bcrypt.hashSync(password, 10);
-  //basaga userni yozish
-  users
-    .create({
-      name: name,
-      lastname: lastname,
-      email: email,
-      password: code,
-    })
-    .then((data) => {
-      //yozgan datani qaytaradi
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-  //userga token berish
   let token = await jsonwebtoken.sign(
     { name: name, lastname: lastname, email: email, password: code },
     secretkey,
@@ -47,6 +57,7 @@ const registeruserPOST = async (req, res) => {
       expiresIn: 86400,
     }
   );
+  res.redirect("/register");
 };
 
 export { registeruserPOST };

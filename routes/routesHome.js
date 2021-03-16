@@ -15,6 +15,8 @@ import { usersvalidation } from "../controllers/validation/usersvalidation";
 import { registeruserPOST } from "../controllers/registerusers";
 import { users } from "../db/models/users";
 import { imageresize } from "../controllers/validation/imageresize";
+import bcrypt from "bcrypt";
+import { CheckUserPOST } from "../controllers/checkuser";
 const router = express.Router();
 //admin panelga kirish
 router.get("/", BlogIndexGet);
@@ -36,14 +38,12 @@ router.put("/home/edit/:id", images, BlogEditPut);
 router.get("/home", BlogPaginationHomeGet);
 //userlarni ro'yxatga olish
 router.post("/register", usersvalidation, registeruserPOST);
-router.get("/users", (req, res) => {
-  users.find((err, docs) => {
-    res.json(docs);
-  });
+router.get("/signin", (req, res) => {
+  res.render("usersignin", { error: null });
 });
 router.get("/register", (req, res) => {
   res.render("form");
 });
-router.post("/checkuser", (req, res) => {});
+router.post("/checkuser", CheckUserPOST);
 
 export { router };

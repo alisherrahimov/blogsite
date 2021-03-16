@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eedb6233-d991-4a5f-b3bb-ea5a065af6a3" name="Default Changelist" comment=" 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Crud.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Crud.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/MulterFileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/MulterFileUpload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/registerusers.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registerusers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routesHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routesHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewblogs.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewblogs.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pagination.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pagination.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +264,7 @@
       <workItem from="1615392753260" duration="4657000" />
       <workItem from="1615486523591" duration="907000" />
       <workItem from="1615742894887" duration="13000" />
+      <workItem from="1615894589279" duration="1703000" />
     </task>
     <servers />
   </component>

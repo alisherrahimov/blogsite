@@ -5,7 +5,7 @@ import fs from "fs";
 import sharp from "sharp";
 const BlogUploadPost = async (req, res) => {
   const { title, description } = req.body;
-  
+
   console.log(req.files);
   const data = await blogs
     .create({
@@ -40,7 +40,7 @@ const BlogDelete = async (req, res) => {
             });
           }
         });
-        res.redirect("/home");
+        res.status(200).json({ success: true, data: docs });
       }
     }
   );
