@@ -1,4 +1,5 @@
-# blogsite
+# BlogSite
 
+Example
 
-blog web site with nodejs and ejs mongoose
+Blog website with nodejs and ejs mongoose

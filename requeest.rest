@@ -1,6 +1,10 @@
+GET http://localhost:3000/register
 
+###
+GET http://localhost:3000/users;
 
-http://localhost:3000/allbook
+###
 
+GET http://localhost:3000/usersignin
 
-POST   http://localhost:3000/allbook
+###

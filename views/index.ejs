@@ -9,12 +9,8 @@
             content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.80.0"/>
-    <title>Signin Template · Bootstrap v5.0</title>
-    <link rel="stylesheet" href="../public/css/styles.css"/>
-    <link
-            rel="stylesheet"
-            href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
-    />
+    <title>Sign In</title>
+    <link href="../public/css1/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Bootstrap core CSS -->
 
@@ -87,7 +83,7 @@
 </head>
 <body class="text-center">
 <main class="form-signin">
-    <form method="POST" action="/checkadmin">
+    <form method="POST" action="/checkuser">
         <img
                 class="mb-4"
                 src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
@@ -100,7 +96,7 @@
         <input
                 type="text"
                 id="username"
-                name="username"
+                name="name"
                 class="form-control"
                 placeholder="Username"
                 required
@@ -126,7 +122,7 @@
         <% if (error == null) { %>
             <p style="color: red;font-weight: bold;margin-top: 10px; "><%= error %></p>
         <% } %>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <p class="mt-5 mb-3 text-muted"> 2020 2021</p>
     </form>
 </main>
 </body>

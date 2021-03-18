@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ("headAndStyles") %>
+  <body>
+    <div class="container-md">
+      <form action="http://localhost:3000/sendemail" method="POST">
+        <div class="mb-3">
+          <label for="ism" class="form-label">Ism</label>
+          <input type="text" class="form-control" id="ism" name="name" />
+        </div>
+        <div class="mb-3">
+          <label for="Familya" class="form-label">Familya</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Familya"
+            name="lastname"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email pochta</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Parol</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Parolni qaytadan kiriting</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password2"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
